@@ -1,0 +1,52 @@
+﻿@model Sistema.Entity.Pessoa
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+@using (Html.BeginForm("Incluir", "Home"))
+{
+    @Html.HiddenFor(x => x.Id)
+
+    <div class="row">
+        <div class="form-group">
+            <div class="col-md-2">
+                <label>Nome</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-mmd-2">
+                @Html.TextBoxFor(x => x.Nome)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-2">
+                <label>Data de Nascimento</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-mmd-2">
+                @Html.TextBoxFor(x => x.DataNascimento)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-2">
+                <label>Dinheiro</label>
+            </div>
+        </div>
+        <div class="form-group">
+
+            <div class="col-mmd-2">
+                @Html.TextBoxFor(x => x.Dinheiro)
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <button class="btn btn-success" type="submit">Salvar</button>
+        </div>
+    </div>
+}
