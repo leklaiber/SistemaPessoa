@@ -13,10 +13,14 @@ namespace Sistema.DataObjects
 
         private string stringConexao = "";
 
-        public SqlConnection conectar()
+        protected SqlConnection conexao
         {
-            SqlConnection sqlConnection = new SqlConnection(stringConexao);
-            return sqlConnection;
+            get
+            {
+                var conn = new SqlConnection(stringConexao);
+                conn.Open();
+                return conn;
+            }
         }
 
         public void Dispose()
