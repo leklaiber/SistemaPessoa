@@ -182,13 +182,13 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sistema.Business\Sistema.Business.csproj">
-      <Project>{33e5b4e4-90c2-4fc8-b86c-0ef84d2979d0}</Project>
-      <Name>Sistema.Business</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Sistema.Entity\Sistema.Entity.csproj">
       <Project>{1a3aa8bf-5676-47bd-bc82-d9f59a893cb3}</Project>
       <Name>Sistema.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sistema.Facade\Sistema.Facade.csproj">
+      <Project>{3aa1cc72-932c-42fc-91e0-0d07846caa28}</Project>
+      <Name>Sistema.Facade</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

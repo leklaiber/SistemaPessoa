@@ -9,3 +9,14 @@ C:\Users\leand\source\repos\Sistema\Sistema.DataObjects\obj\Debug\Sistema.DataOb
 C:\Users\leand\source\repos\Sistema\Sistema.DataObjects\obj\Debug\Sistema.DataObjects.csproj.CopyComplete
 C:\Users\leand\source\repos\Sistema\Sistema.DataObjects\obj\Debug\Sistema.DataObjects.dll
 C:\Users\leand\source\repos\Sistema\Sistema.DataObjects\obj\Debug\Sistema.DataObjects.pdb
+C:\Users\leand\source\repos\SistemaPessoa\Sistema.DataObjects\bin\Debug\Sistema.DataObjects.dll
+C:\Users\leand\source\repos\SistemaPessoa\Sistema.DataObjects\bin\Debug\Sistema.DataObjects.pdb
+C:\Users\leand\source\repos\SistemaPessoa\Sistema.DataObjects\bin\Debug\Dapper.dll
+C:\Users\leand\source\repos\SistemaPessoa\Sistema.DataObjects\bin\Debug\Sistema.Entity.dll
+C:\Users\leand\source\repos\SistemaPessoa\Sistema.DataObjects\bin\Debug\Sistema.Entity.pdb
+C:\Users\leand\source\repos\SistemaPessoa\Sistema.DataObjects\bin\Debug\Dapper.xml
+C:\Users\leand\source\repos\SistemaPessoa\Sistema.DataObjects\obj\Debug\Sistema.DataObjects.csprojAssemblyReference.cache
+C:\Users\leand\source\repos\SistemaPessoa\Sistema.DataObjects\obj\Debug\Sistema.DataObjects.csproj.CoreCompileInputs.cache
+C:\Users\leand\source\repos\SistemaPessoa\Sistema.DataObjects\obj\Debug\Sistema.DataObjects.csproj.CopyComplete
+C:\Users\leand\source\repos\SistemaPessoa\Sistema.DataObjects\obj\Debug\Sistema.DataObjects.dll
+C:\Users\leand\source\repos\SistemaPessoa\Sistema.DataObjects\obj\Debug\Sistema.DataObjects.pdb

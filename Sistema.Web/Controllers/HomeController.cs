@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Sistema.Business;
+using Sistema.Facade;
 using Sistema.Entity;
 
 namespace Sistema.Web.Controllers
@@ -12,12 +12,10 @@ namespace Sistema.Web.Controllers
     {
         public ActionResult Index()
         {
-            //List<Pessoa> pessoas = new PessoaBusiness().Listar();
-            List<Pessoa> pessoas = (List<Pessoa>)Session["listPessoas"];
+            List<Pessoa> pessoas = PessoaFacade.Listar();
             if (pessoas == null)
-            {
                 pessoas = new List<Pessoa>();
-            }
+
             return View(pessoas);
         }
 
@@ -28,64 +26,45 @@ namespace Sistema.Web.Controllers
 
         public ActionResult Incluir(Pessoa pessoa)
         {
-            //var result = new PessoaBusiness().Inserir(pessoa);
-
-            List<Pessoa> pessoas =(List<Pessoa>)Session["listPessoas"];
-            if (pessoas == null)
-            {
-                pessoas = new List<Pessoa>();
-            }
+            var result = PessoaFacade.Inserir(pessoa);
 
             if (pessoa.Id > 0)
             {
-                //var atualiza = new PessoaBusiness().Atualizar(pessoa);
-                pessoas.Remove(pessoas.Where(x => x.Id == pessoa.Id).FirstOrDefault());
+                bool atualizou = PessoaFacade.Atualizar(pessoa);
+                if (!atualizou)
+                {
+                    // mostra erro
+                }
             }
             else
             {
-                int proxId = pessoas.Count > 0 ? pessoas.Max(x => x.Id) : 0;
-                pessoa.Id = proxId + 1;
+                bool inseriu = PessoaFacade.Inserir(pessoa);
+                if (!inseriu)
+                {
+                    // mostra erro
+                }
             }
-
-            int idade = DateTime.Now.Year - pessoa.DataNascimento.Year;
-            if (DateTime.Now.Month < pessoa.DataNascimento.Month || (DateTime.Now.Month == pessoa.DataNascimento.Month && DateTime.Now.Day < pessoa.DataNascimento.Day))
-                idade--;
-
-            pessoa.Idade = idade;
-
-            pessoas.Add(pessoa);
-
-            Session["listPessoas"] = pessoas;
 
             return RedirectToAction("Index");
         }
 
         public ActionResult Deletar(int id)
         {
-            //var result = new PessoaBusiness().Deletar(new Pessoa { Id = id });
-
-            List<Pessoa> pessoas = (List<Pessoa>)Session["listPessoas"];
-
-            pessoas.Remove(pessoas.Where(x => x.Id == id).FirstOrDefault());
+            var result = PessoaFacade.Deletar(new Pessoa { Id = id });
 
             return RedirectToAction("Index");
         }
 
         public ActionResult Editar(int id)
         {
-            //var result = new PessoaBusiness().Selecionar(id);
-
-            List<Pessoa> pessoas = (List<Pessoa>)Session["listPessoas"];
-
-            Pessoa pessoa = pessoas.Where(x => x.Id == id).FirstOrDefault();
-
+            var pessoa = PessoaFacade.Selecionar(id);
+          
             return View("Cadastrar", pessoa);
         }
 
         public ActionResult SelecionarMaiorvalor()
         { 
-            //List<Pessoa> pessoas = new PessoaBusiness().Listar();
-            List<Pessoa> pessoas = (List<Pessoa>)Session["listPessoas"];
+            List<Pessoa> pessoas = PessoaFacade.Listar();
             if (pessoas == null)
             {
                 pessoas = new List<Pessoa>();

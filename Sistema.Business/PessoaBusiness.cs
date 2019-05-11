@@ -2,13 +2,14 @@
 using Sistema.Entity;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Sistema.Business
 {
-    public class PessoaBusiness
+    public class PessoaBusiness : BaseBusiness
     {
         public Pessoa Selecionar(int id)
         {
@@ -35,6 +36,12 @@ namespace Sistema.Business
                 if (pessoa == null)
                 {
                     return false;
+                }
+                
+                if (base.Validar(pessoa, out var retorno))
+                {
+                    //variavel retorno contem todos os erros da validação
+                    return true;
                 }
 
                 return new PessoaDao().Inserir(pessoa);
